@@ -133,3 +133,18 @@ data_volume: /data
 ```
 
 然后通过访问预设端口,就可以打开Harbor UI界面
+
+## 部署后的问题
+
+Harbor在服务器重启后，似乎也要手动重启。。。
+
+进入harbor文件夹，执行如下命令
+
+```
+docker-compose up
+```
+
+
+
+
+
