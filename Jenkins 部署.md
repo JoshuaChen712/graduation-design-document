@@ -18,17 +18,21 @@ sudo docker run --name jenkins --restart always -d -p 10880:8080 -p 15000:50000 
 
 ##### jenkins执行docker命令无权限解决方案
 
+这个问题往往会在重启Docker或者服务器后出现，解决方法如下：
+
 1.尝试运行如下命令
 
 ```
-chown jenkins:docker /var/run/docker.sock
+sudo chown jenkins:docker /var/run/docker.sock
 ```
 
-2.停掉原来的，重启一个jenkins容器
+2.重启jenkins容器
 
 ##### 使用Jenkins api创建任务报错
 
-进入jenkins管理界面，在jenkins控制台输入：
+该问题同样出现在每次重启。。。
+
+进入jenkins系统管理-脚本命令行，在jenkins控制台输入：
 
 ```
 hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION = true
